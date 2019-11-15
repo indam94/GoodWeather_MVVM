@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WeatherListTableViewController.swift
 //  GoodWeather_MVVM
 //
 //  Created by DONGGUN LEE on 11/15/19.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class WeatherListTableViewController: UITableViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
-
-
 }
-
