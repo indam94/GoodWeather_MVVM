@@ -16,13 +16,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uUK-E8-RbB">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherListTableCell" rowHeight="79" id="uUK-E8-RbB" customClass="WeatherListTableCell" customModule="GoodWeather_MVVM" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uUK-E8-RbB" id="WLa-Ad-a8l">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpd-VY-p8b">
+                                            <rect key="frame" x="20" y="26.5" width="52.5" height="26.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6h-FQ-15S">
+                                            <rect key="frame" x="318" y="20" width="76" height="39"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="wpd-VY-p8b" firstAttribute="leading" secondItem="WLa-Ad-a8l" secondAttribute="leading" constant="20" id="B6x-2b-855"/>
+                                        <constraint firstItem="wpd-VY-p8b" firstAttribute="centerY" secondItem="WLa-Ad-a8l" secondAttribute="centerY" id="UNH-Zl-Z5B"/>
+                                        <constraint firstAttribute="trailing" secondItem="z6h-FQ-15S" secondAttribute="trailing" constant="20" id="gvX-3q-A41"/>
+                                        <constraint firstItem="z6h-FQ-15S" firstAttribute="centerY" secondItem="WLa-Ad-a8l" secondAttribute="centerY" id="rUB-68-gY4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cityNameLabel" destination="wpd-VY-p8b" id="Xby-5s-j7g"/>
+                                    <outlet property="temperatureLabel" destination="z6h-FQ-15S" id="ALn-NX-83v"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
