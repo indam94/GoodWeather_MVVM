@@ -17,9 +17,14 @@ class AddCityViewController: UIViewController{
             
             if let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(API_KEY)&units=imperial"){
                 
-                let weatherResource = Resource<Any>(url: weatherURL){ data in
+                let weatherResource = Resource<WeatherViewModel>(url: weatherURL){ data in
                     
-                    return data
+                    let weatherVM = try? JSONDecoder().decode(WeatherViewModel.self, from : data)
+                    if let weatherVM = weatherVM{
+                        print(weatherVM)
+                        return weatherVM
+                    }
+                    return nil
                 }
                 
                 WebService().load(resource: weatherResource){ result in
