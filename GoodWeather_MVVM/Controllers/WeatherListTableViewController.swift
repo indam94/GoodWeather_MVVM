@@ -8,7 +8,9 @@
 
 import UIKit
 
-class WeatherListTableViewController: UITableViewController{
+class WeatherListTableViewController: UITableViewController, AddWeatherDelegate{
+    
+    private var weatherListVM = WeatherListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +27,34 @@ class WeatherListTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1;
+        return self.weatherListVM.numberOfRows(section);
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherListTableCell", for: indexPath) as! WeatherListTableCell
         
-        cell.cityNameLabel.text = "Huston"
-        cell.temperatureLabel.text = "55°"
+        let weatherVM = self.weatherListVM.modelAt(indexPath.row)
+        cell.configure(weatherVM)
         
         return cell
+    }
+    
+    func addWeatherDidSave(vm: WeatherViewModel) {
+        self.weatherListVM.addWeatherViewModel(vm)
+        self.tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let nav = segue.destination as? UINavigationController else{
+            fatalError("NavigationController Not Found")
+        }
+        
+        guard let addWeatherCityVC = nav.viewControllers.first as? AddCityViewController else{
+            fatalError("AddWeatherCityViewController Not Found")
+        }
+        
+        addWeatherCityVC.delegate = self
+        
     }
 }

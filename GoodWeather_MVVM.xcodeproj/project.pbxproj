@@ -20,6 +20,7 @@
 		22853F892384DC6E003E8205 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22853F882384DC6E003E8205 /* WebServices.swift */; };
 		22853F8C23850C2A003E8205 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22853F8B23850C2A003E8205 /* WeatherListViewModel.swift */; };
 		22853F8E23850EDA003E8205 /* TemperatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22853F8D23850EDA003E8205 /* TemperatureViewModel.swift */; };
+		22853F9123851A9E003E8205 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22853F9023851A9E003E8205 /* Double+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		22853F882384DC6E003E8205 /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		22853F8B23850C2A003E8205 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 		22853F8D23850EDA003E8205 /* TemperatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewModel.swift; sourceTree = "<group>"; };
+		22853F9023851A9E003E8205 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		2235C24E237F5A590008C67B /* GoodWeather_MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				22853F8F23851A84003E8205 /* Extensions */,
 				22853F8A23850C16003E8205 /* ViewModels */,
 				22853F872384DC5E003E8205 /* Services */,
 				2235C26B237F66290008C67B /* CustomCells */,
@@ -118,6 +121,14 @@
 				22853F8D23850EDA003E8205 /* TemperatureViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		22853F8F23851A84003E8205 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				22853F9023851A9E003E8205 /* Double+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 				2235C26D237F66490008C67B /* WeatherListTableCell.swift in Sources */,
 				2235C250237F5A590008C67B /* AppDelegate.swift in Sources */,
 				2235C252237F5A590008C67B /* SceneDelegate.swift in Sources */,
+				22853F9123851A9E003E8205 /* Double+Extension.swift in Sources */,
 				22853F862384DA31003E8205 /* ApiKey.swift in Sources */,
 				2235C268237F5D120008C67B /* WeatherListTableViewController.swift in Sources */,
 				22853F8E23850EDA003E8205 /* TemperatureViewModel.swift in Sources */,
