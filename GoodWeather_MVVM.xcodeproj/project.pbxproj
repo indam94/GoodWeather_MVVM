@@ -20,6 +20,7 @@
 		22452EF923872DD800BD1BC5 /* 740-gear-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22452EF623872DD800BD1BC5 /* 740-gear-toolbar@3x.png */; };
 		22452EFA23872DD800BD1BC5 /* 740-gear-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22452EF723872DD800BD1BC5 /* 740-gear-toolbar.png */; };
 		22452EFD23872F9C00BD1BC5 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22452EFC23872F9C00BD1BC5 /* SettingTableViewController.swift */; };
+		22452EFF238731E000BD1BC5 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22452EFE238731E000BD1BC5 /* SettingViewModel.swift */; };
 		22853F862384DA31003E8205 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22853F852384DA31003E8205 /* ApiKey.swift */; };
 		22853F892384DC6E003E8205 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22853F882384DC6E003E8205 /* WebServices.swift */; };
 		22853F8C23850C2A003E8205 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22853F8B23850C2A003E8205 /* WeatherListViewModel.swift */; };
@@ -43,6 +44,7 @@
 		22452EF623872DD800BD1BC5 /* 740-gear-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "740-gear-toolbar@3x.png"; sourceTree = "<group>"; };
 		22452EF723872DD800BD1BC5 /* 740-gear-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "740-gear-toolbar.png"; sourceTree = "<group>"; };
 		22452EFC23872F9C00BD1BC5 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		22452EFE238731E000BD1BC5 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		22853F852384DA31003E8205 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		22853F882384DC6E003E8205 /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		22853F8B23850C2A003E8205 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				22853F8B23850C2A003E8205 /* WeatherListViewModel.swift */,
 				22853F8D23850EDA003E8205 /* TemperatureViewModel.swift */,
+				22452EFE238731E000BD1BC5 /* SettingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				22452EFD23872F9C00BD1BC5 /* SettingTableViewController.swift in Sources */,
 				22853F8C23850C2A003E8205 /* WeatherListViewModel.swift in Sources */,
 				2235C26A237F5D220008C67B /* AddCityViewController.swift in Sources */,
+				22452EFF238731E000BD1BC5 /* SettingViewModel.swift in Sources */,
 				2235C26D237F66490008C67B /* WeatherListTableCell.swift in Sources */,
 				2235C250237F5A590008C67B /* AppDelegate.swift in Sources */,
 				2235C252237F5A590008C67B /* SceneDelegate.swift in Sources */,

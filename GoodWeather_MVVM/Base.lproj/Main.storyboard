@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Co4-Vc-Jvo">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SettingCell" id="Co4-Vc-Jvo">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Co4-Vc-Jvo" id="fiL-55-aTW">
@@ -30,7 +30,13 @@
                             <outlet property="delegate" destination="MhG-Ev-eSB" id="jp6-Ie-eVi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="bFa-16-vJ4"/>
+                    <navigationItem key="navigationItem" title="Setting" id="bFa-16-vJ4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="X1H-Ey-rZA">
+                            <connections>
+                                <action selector="close:" destination="MhG-Ev-eSB" id="Lg9-aA-fus"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIa-bB-QZL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
