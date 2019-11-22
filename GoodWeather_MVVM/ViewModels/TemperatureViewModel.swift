@@ -9,7 +9,7 @@
 import Foundation
 
 struct TemperatureViewModel: Codable{
-    let temperature: Double
+    var temperature: Double
     let temperatureMin: Double
     let temperatureMax: Double
     

@@ -12,8 +12,6 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -29,9 +27,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearanceProxy.compactAppearance = standard
         navigationBarAppearanceProxy.standardAppearance = standard
 
-       
+        self.setupDefaultSetting()
         
         return true
+    }
+    
+    private func setupDefaultSetting(){
+        
+        let userDefault = UserDefaults.standard
+        
+        if userDefault.value(forKey: "temperatureUnit") == nil{
+            userDefault.set(TemperatureUnit.fahrenheit.rawValue, forKey:"temperatureUnit")
+        }
+        
     }
 
     // MARK: UISceneSession Lifecycle

@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol SettingDelegate {
+    func settingDone(vm : SettingViewModel)
+}
+
 class SettingTableViewController: UITableViewController{
     
     private var settingViewModel = SettingViewModel()
+    
+    var delegate: SettingDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +38,27 @@ class SettingTableViewController: UITableViewController{
         
         let settingItem = self.settingViewModel.units[indexPath.row]
         cell.textLabel?.text = settingItem.displayName
+        
+        if settingItem == self.settingViewModel.selectedTemperatureUnit{
+            cell.accessoryType = .checkmark
+        }
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // uncheck all cells
+        tableView.visibleCells.forEach{ cell in
+            cell.accessoryType = .none
+        }
+        
         if let cell = tableView.cellForRow(at: indexPath){
             cell.accessoryType = .checkmark
+            let unit = TemperatureUnit.allCases[indexPath.row]
+            self.settingViewModel.selectedTemperatureUnit = unit
         }
+        
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -48,6 +68,11 @@ class SettingTableViewController: UITableViewController{
     }
     
     @IBAction func close(_ sender: Any) {
+        
+        if let delegate = self.delegate{
+            delegate.settingDone(vm: self.settingViewModel)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
 }

@@ -29,4 +29,18 @@ extension TemperatureUnit{
 
 struct SettingViewModel{
     let units = TemperatureUnit.allCases
+    private var _selectedUnit: TemperatureUnit = TemperatureUnit.fahrenheit
+    
+    var selectedTemperatureUnit: TemperatureUnit{
+        get{
+            if let value = UserDefaults.standard.value(forKey: "temperatureUnit") as? String{
+                return TemperatureUnit(rawValue: value)!
+            }
+            
+            return _selectedUnit
+        }
+        set (newValue){
+            UserDefaults.standard.set(newValue.rawValue, forKey: "temperatureUnit")
+        }
+    }
 }
