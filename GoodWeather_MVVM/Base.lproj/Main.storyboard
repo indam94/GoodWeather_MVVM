@@ -59,7 +59,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpd-VY-p8b">
-                                            <rect key="frame" x="20" y="26.5" width="52.5" height="26.5"/>
+                                            <rect key="frame" x="20" y="26" width="52.5" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -73,6 +73,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="wpd-VY-p8b" firstAttribute="leading" secondItem="WLa-Ad-a8l" secondAttribute="leading" constant="20" id="B6x-2b-855"/>
+                                        <constraint firstItem="z6h-FQ-15S" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wpd-VY-p8b" secondAttribute="trailing" constant="8" symbolic="YES" id="N64-f4-HxV"/>
                                         <constraint firstItem="wpd-VY-p8b" firstAttribute="centerY" secondItem="WLa-Ad-a8l" secondAttribute="centerY" id="UNH-Zl-Z5B"/>
                                         <constraint firstAttribute="trailing" secondItem="z6h-FQ-15S" secondAttribute="trailing" constant="20" id="gvX-3q-A41"/>
                                         <constraint firstItem="z6h-FQ-15S" firstAttribute="centerY" secondItem="WLa-Ad-a8l" secondAttribute="centerY" id="rUB-68-gY4"/>
@@ -114,25 +115,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xh9-y5-mAN">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xh9-y5-mAN">
                                 <rect key="frame" x="20" y="106" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yb9-my-myh">
+                                <rect key="frame" x="20" y="170" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECy-fE-T77">
-                                <rect key="frame" x="150" y="190" width="114" height="30"/>
+                                <rect key="frame" x="150" y="298" width="114" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveCity:" destination="WcB-o9-rzk" eventType="touchUpInside" id="pHc-w4-B07"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GS1-pu-Q3q">
+                                <rect key="frame" x="20" y="234" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="GS1-pu-Q3q" firstAttribute="top" secondItem="Yb9-my-myh" secondAttribute="bottom" constant="30" id="1CP-iZ-t2U"/>
                             <constraint firstItem="VQ1-Fg-Jxt" firstAttribute="trailing" secondItem="ECy-fE-T77" secondAttribute="trailing" constant="150" id="Al7-z9-rC6"/>
+                            <constraint firstItem="VQ1-Fg-Jxt" firstAttribute="trailing" secondItem="GS1-pu-Q3q" secondAttribute="trailing" constant="20" id="BgW-ei-TAT"/>
+                            <constraint firstItem="ECy-fE-T77" firstAttribute="top" secondItem="GS1-pu-Q3q" secondAttribute="bottom" constant="30" id="CRR-25-niS"/>
                             <constraint firstItem="ECy-fE-T77" firstAttribute="leading" secondItem="VQ1-Fg-Jxt" secondAttribute="leading" constant="150" id="F3Q-Ug-jHJ"/>
+                            <constraint firstItem="VQ1-Fg-Jxt" firstAttribute="trailing" secondItem="Yb9-my-myh" secondAttribute="trailing" constant="20" id="LCG-Ma-ilv"/>
+                            <constraint firstItem="GS1-pu-Q3q" firstAttribute="leading" secondItem="VQ1-Fg-Jxt" secondAttribute="leading" constant="20" id="M36-iW-I6L"/>
                             <constraint firstItem="Xh9-y5-mAN" firstAttribute="top" secondItem="VQ1-Fg-Jxt" secondAttribute="top" constant="50" id="aEt-OD-pLH"/>
-                            <constraint firstItem="ECy-fE-T77" firstAttribute="top" secondItem="Xh9-y5-mAN" secondAttribute="bottom" constant="50" id="bN4-nN-8yp"/>
+                            <constraint firstItem="Yb9-my-myh" firstAttribute="leading" secondItem="VQ1-Fg-Jxt" secondAttribute="leading" constant="20" id="b5c-Ht-I7i"/>
+                            <constraint firstItem="Yb9-my-myh" firstAttribute="top" secondItem="Xh9-y5-mAN" secondAttribute="bottom" constant="30" id="ewA-G5-LQR"/>
                             <constraint firstItem="Xh9-y5-mAN" firstAttribute="leading" secondItem="VQ1-Fg-Jxt" secondAttribute="leading" constant="20" id="kIj-5g-DJD"/>
                             <constraint firstItem="VQ1-Fg-Jxt" firstAttribute="trailing" secondItem="Xh9-y5-mAN" secondAttribute="trailing" constant="20" id="qsM-Ha-8OH"/>
                         </constraints>
@@ -147,6 +164,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cityNameTextField" destination="Xh9-y5-mAN" id="5WT-ih-CdV"/>
+                        <outlet property="stateTextField" destination="Yb9-my-myh" id="iKZ-0x-0cI"/>
+                        <outlet property="zipCodeTextField" destination="GS1-pu-Q3q" id="ROt-7D-tED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSF-Us-y1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
