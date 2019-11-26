@@ -20,6 +20,12 @@ class BindingTextField: UITextField{
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
+        commonInit()
+    }
+    
+    func bind(callback: @escaping (String)->()){
+        self.textChangeClosure = callback
     }
     
     private func commonInit(){
