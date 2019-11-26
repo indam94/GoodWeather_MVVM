@@ -47,16 +47,20 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "AddCityViewController"{
-            self.prepareSeagueForAddCityViewController(segue: segue)
+            self.prepareSegueForAddCityViewController(segue: segue)
         }
         
         else if segue.identifier == "SettingTableViewController"{
-            self.prepareSeagueForSettingTableViewController(segue: segue)
+            self.prepareSegueForSettingTableViewController(segue: segue)
+        }
+        
+        else if segue.identifier == "WeatherDetailViewController" {
+            self.prepareSegueForWeatherDetailViewController(segue: segue)
         }
         
     }
     
-    private func prepareSeagueForAddCityViewController(segue: UIStoryboardSegue){
+    private func prepareSegueForAddCityViewController(segue: UIStoryboardSegue){
         
         guard let nav = segue.destination as? UINavigationController else{
             fatalError("NavigationController Not Found")
@@ -69,7 +73,7 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate{
         addWeatherCityVC.delegate = self
     }
     
-    private func prepareSeagueForSettingTableViewController(segue: UIStoryboardSegue){
+    private func prepareSegueForSettingTableViewController(segue: UIStoryboardSegue){
         
         guard let nav = segue.destination as? UINavigationController else{
              fatalError("NavigationController Not Found")
@@ -80,6 +84,18 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate{
          }
         
          settingVC.delegate = self
+        
+    }
+    
+    private func prepareSegueForWeatherDetailViewController(segue: UIStoryboardSegue){
+        
+        guard let weatherDetailVC = segue.destination as? WeatherDetailViewController,
+            let indexPath = self.tableView.indexPathForSelectedRow
+        else{
+            return
+        }
+        let weatherVM = self.weatherListVM.modelAt(indexPath.row)
+        weatherDetailVC.weatherVM = weatherVM
         
     }
 }
