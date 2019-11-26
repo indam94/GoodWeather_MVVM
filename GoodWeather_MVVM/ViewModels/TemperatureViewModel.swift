@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct TemperatureViewModel: Codable{
-    var temperature: Double
-    let temperatureMin: Double
-    let temperatureMax: Double
+struct TemperatureViewModel: Decodable{
+    var temperature: Dynamic<Double>
+    let temperatureMin: Dynamic<Double>
+    let temperatureMax: Dynamic<Double>
     
     private enum CodingKeys: String, CodingKey{
         case temperature = "temp"

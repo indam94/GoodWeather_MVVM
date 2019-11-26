@@ -22,8 +22,9 @@ class WeatherDetailViewController: UIViewController {
         
         if let weatherVM = self.weatherVM{
             
-            self.cityNameLabel.text = weatherVM.name
-            self.currentTemperatureLabel.text = weatherVM.currentTemperature.temperature.formatAsDegree
+            self.cityNameLabel.text = weatherVM.name.value
+            self.currentTemperatureLabel.text = weatherVM.currentTemperature.temperature.value.formatAsDegree
+            
             
             
         }
