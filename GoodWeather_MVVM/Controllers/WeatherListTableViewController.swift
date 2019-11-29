@@ -11,32 +11,18 @@ import UIKit
 class WeatherListTableViewController: UITableViewController, AddWeatherDelegate{
     
     private var weatherListVM = WeatherListViewModel()
+    private var dataSource: WeatherDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        self.dataSource = WeatherDataSource(self.weatherListVM)
+        self.tableView.dataSource = self.dataSource
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.weatherListVM.numberOfRows(section);
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherListTableCell", for: indexPath) as! WeatherListTableCell
-        
-        let weatherVM = self.weatherListVM.modelAt(indexPath.row)
-        cell.configure(weatherVM)
-        
-        return cell
     }
     
     func addWeatherDidSave(vm: WeatherViewModel) {
